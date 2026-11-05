@@ -109,15 +109,26 @@
                     <label>National Police HQ</label>
                 </div>
 
-                <div class="form-check form-check-inline police-option {{ $police->category == 'Police Precint' ? 'selected' : '' }}">
+                <div class="form-check form-check-inline police-option {{ $police->category == 'Regional Substation' ? 'selected' : '' }}">
                     <input class="form-check-input category-radio"
                         type="radio"
                         name="category"
-                        value="Police Precint"
+                        value="Regional Substation"
                         data-icon="{{ asset('images/Layer2.png') }}"
-                        {{ $police->category == 'Police Precint' ? 'checked' : '' }}>
+                        {{ $police->category == 'Regional Substation' ? 'checked' : '' }}>
                     <img src="{{ asset('images/Layer2.png') }}" width="16">
-                    <label>Police Precint</label>
+                    <label>Regional Substation</label>
+                </div>
+
+                <div class="form-check form-check-inline police-option {{ $police->category == 'Regional Substation' ? 'selected' : '' }}">
+                    <input class="form-check-input category-radio"
+                        type="radio"
+                        name="category"
+                        value="Regional Substation"
+                        data-icon="{{ asset('images/Layer3.png') }}"
+                        {{ $police->category == 'Regional Substation' ? 'checked' : '' }}>
+                    <img src="{{ asset('images/Layer3.png') }}" width="16">
+                    <label>Regional Substation</label>
                 </div>
             </div>
         </div>

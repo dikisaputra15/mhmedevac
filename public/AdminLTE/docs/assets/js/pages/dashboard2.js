@@ -221,7 +221,7 @@ $(function () {
   //     },
   //     {
   //       latLng: [7.35, 134.46],
-  //       name  : 'Guam'
+  //       name  : 'Marshall Islands'
   //     },
   //     {
   //       latLng: [42.5, 1.51],

@@ -142,7 +142,7 @@
                     <p>
                         <strong>Address:</strong>
                         {{ $embassy->location }},
-                        {{ $province->provinces_region }}, Territory (Government of Guam)
+                        {{ $province->provinces_region }}, Marshall Islands
                     </p>
                     <p>
                         <strong>Latitude:</strong> {{ $embassy->latitude }}
