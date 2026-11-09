@@ -158,7 +158,7 @@
                             <p><strong>Category:</strong> {{ $airport->category }} </p>
                             <p><strong>IATA Code:</strong> {{ $airport->iata_code }} </p>
                             <p><strong>ICAO Code:</strong> {{ $airport->icao_code }} </p>
-                            <p><strong>Hrs of Operation:</strong> {{ $airport->hrs_of_operation }} </p>
+                            <p><strong>Hrs of Operation:</strong> {!! $airport->hrs_of_operation !!} </p>
                             <p><strong>Distance to:</strong><br>
                                 <?php echo $airport->distance_from; ?>
                             </p>
