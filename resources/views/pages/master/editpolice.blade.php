@@ -109,26 +109,26 @@
                     <label>National Police HQ</label>
                 </div>
 
-                <div class="form-check form-check-inline police-option {{ $police->category == 'Regional Substation' ? 'selected' : '' }}">
+                <div class="form-check form-check-inline police-option {{ $police->category == 'Regional Police Substation' ? 'selected' : '' }}">
                     <input class="form-check-input category-radio"
                         type="radio"
                         name="category"
-                        value="Regional Substation"
+                        value="Regional Police Substation"
                         data-icon="{{ asset('images/Layer2.png') }}"
-                        {{ $police->category == 'Regional Substation' ? 'checked' : '' }}>
+                        {{ $police->category == 'Regional Police Substation' ? 'checked' : '' }}>
                     <img src="{{ asset('images/Layer2.png') }}" width="16">
-                    <label>Regional Substation</label>
+                    <label>Regional Police Substation</label>
                 </div>
 
-                <div class="form-check form-check-inline police-option {{ $police->category == 'Regional Substation' ? 'selected' : '' }}">
+                <div class="form-check form-check-inline police-option {{ $police->category == 'Municipal Police Posts' ? 'selected' : '' }}">
                     <input class="form-check-input category-radio"
                         type="radio"
                         name="category"
-                        value="Regional Substation"
+                        value="Municipal Police Posts"
                         data-icon="{{ asset('images/Layer3.png') }}"
-                        {{ $police->category == 'Regional Substation' ? 'checked' : '' }}>
+                        {{ $police->category == 'Municipal Police Posts' ? 'checked' : '' }}>
                     <img src="{{ asset('images/Layer3.png') }}" width="16">
-                    <label>Regional Substation</label>
+                    <label>Municipal Police Posts</label>
                 </div>
             </div>
         </div>

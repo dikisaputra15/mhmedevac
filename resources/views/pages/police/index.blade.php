@@ -368,7 +368,12 @@
 
                 <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#police3Modal">
                     <img src="{{ asset('images/Layer2.png') }}" style="width:15px; height:15px;">
-                    <small>Police Precint</small>
+                    <small>Regional Police Substation</small>
+                </button>
+
+                 <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#police3Modal">
+                    <img src="{{ asset('images/Layer3.png') }}" style="width:15px; height:15px;">
+                    <small>Municipal Police Posts</small>
                 </button>
 
                 <button type="button" class="btn btn-danger d-flex flex-column align-items-center p-3 {{ request()->is('hospital') ? 'active' : '' }}"
@@ -1338,7 +1343,8 @@ combinedPanelDiv.innerHTML = `
             <label>Category:</label>
             ${[
                 'National Police HQ',
-                'Police Precint',
+                'Regional Police Substation',
+                'Municipal Police Posts',
             ].map(c => `
             <label style="display:block;font-size:13px;margin-bottom:5px;">
                 <input type="checkbox" name="policeCategory" value="${c}">
