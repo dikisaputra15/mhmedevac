@@ -309,6 +309,7 @@
     .dashboard-classifications .airport-list {
       align-items: flex-start;
       padding: 0;
+      overflow-x: auto;
     }
     .dashboard-classifications .btn {
       display: inline-flex;
@@ -608,7 +609,12 @@
                                   <small>Regional</small>
                               </button>
                             </div>
-                            <div></div> <!-- empty grid item for row 1 -->
+                            <div class="hospital-item">
+                              <button class="btn p-1 text-start w-100" data-bs-toggle="modal" data-bs-target="#helipadModal">
+                                  <img src="https://pg.concordreview.com/wp-content/uploads/2025/11/helipad-removebg.png" style="width:18px; height:18px;">
+                                  <small>Helipad</small>
+                              </button>
+                            </div>
 
                             <!-- Airport row 2 -->
                             <div class="hospital-item">
@@ -627,12 +633,6 @@
                               <button class="btn p-1 text-start w-100" data-bs-toggle="modal" data-bs-target="#level1Modal">
                                   <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/private-airport.png" style="width:18px; height:18px;">
                                   <small>Private</small>
-                              </button>
-                            </div>
-                            <div class="hospital-item">
-                              <button class="btn p-1 text-start w-100" data-bs-toggle="modal" data-bs-target="#">
-                                  <img src="https://pg.concordreview.com/wp-content/uploads/2025/11/helipad-removebg.png" style="width:18px; height:18px;">
-                                  <small>Helipad</small>
                               </button>
                             </div>
                           </div>
@@ -681,7 +681,13 @@
                                 <div class="hospital-item">
                                     <button class="btn p-1 text-start w-100" data-bs-toggle="modal" data-bs-target="#police3Modal">
                                         <img src="{{ asset('images/Layer2.png') }}" style="width:12px; height:12px;">
-                                        <small>Police Precint</small>
+                                        <small>Regional Police Substation</small>
+                                    </button>
+                                </div>
+                                <div class="hospital-item">
+                                    <button class="btn p-1 text-start w-100" data-bs-toggle="modal" data-bs-target="#police2Modal">
+                                        <img src="{{ asset('images/Layer3.png') }}" style="width:12px; height:12px;">
+                                        <small>Municipal Police Posts</small>
                                     </button>
                                 </div>
                             </div>
@@ -737,109 +743,7 @@
 
 </div>
 
-<div class="modal fade" id="level1Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="d-flex align-items-center">
-             <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/private-airport.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">Private Airfield</h5>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p class="p-modal">Also known as private airfields or airstrips are primarily used for general and private aviation are owned by private individuals, groups, corporations, or organizations operated for their exclusive use that may include limited access for authorized personnel by the owner or manager. Owners are responsible to ensure safe operation, maintenance, repair, and control of who can use the facilities. Typically, they are not open to the public or provide scheduled commercial airline services and cater to private pilots, business aviation, and sometimes small charter operations. Services may be provided if authorized by the appropriate regulatory authority.</p>
-
-        <p class="p-modal">A large majority of private airports are grass or dirt strip fields without services or facilities, they may feature amenities such as hangars, fueling facilities, maintenance services, and ground transportation options tailored to the needs of their owners or users. Private airports are not subject to the same level of regulatory oversight as public airports, but must still comply with applicable aviation regulations, safety standards, and environmental requirements. In the event of an emergency, landing at a private airport is authorized without any prior approval and should be done if landing anywhere else compromises the safety of the aircraft, crew, passengers, or cargo.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="level2Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="d-flex align-items-center">
-            <img src="https://pg.concordreview.com/wp-content/uploads/2024/10/civil-military-airport.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">Combined Airfield</h5>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p class="p-modal">Also called "joint-use airport," are used by both civilian and military aircraft, where a formal agreement exists between the military and a local government agency allowing shared access to infrastructure and facilities, typically with separate passenger terminals and designated operating areas, airspace allocation, and aircraft scheduling. Features can include aircraft maintenance, air traffic control, communications, emergency response, and fuel storage.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="level3Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="d-flex align-items-center">
-             <img src="https://pg.concordreview.com/wp-content/uploads/2024/10/military-airport-red.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">Military Airfield</h5>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p class="p-modal">Facilities where military aircraft operate, also known as a military airport, airbase, or air station. Features include aircraft maintenance, air traffic control, communications, emergency response, fuel and weapon storage, defensive systems, aircraft shelters, and personnel facilities.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="level4Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="d-flex align-items-center">
-            <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/regional-domestic-airport.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">Regional Domestic Airfield</h5>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p class="p-modal">A small or remote regional domestic airfield usually located in a geographically isolated area, far from major population centers, often with difficult terrain or vast distances from other airports with limited passenger traffic. May have shorter runways, basic facilities, and limited amenities, and basic infrastructure, serving primarily local communities providing access to essential services like medical transport or regional travel, rather than large-scale commercial flights.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="level5Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="d-flex align-items-center">
-            <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/regional-airport.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">Domestic Airfield</h5>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p class="p-modal">Exclusively manages flights that originate and end within the same country, does not have international customs or border control facilities. Airport often has smaller and shorter runways, suitable for smaller regional aircraft used on domestic routes, and cannot support larger haul aircraft having less developed support services. Features can include aircraft maintenance, air traffic control, communications, emergency response, and fuel storage.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="level6Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="d-flex align-items-center">
-            <img src="https://pg.concordreview.com/wp-content/uploads/2024/10/International-Airport.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">International Airfield</h5>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p class="p-modal">Meet standards set by the International Air Transport Association (IATA) and the International Civil Aviation Organization (ICAO), facilitate transnational travel managing flights between countries, have customs and border control facilities to manage passengers and cargo, and may have dedicated terminals for domestic and international flights. International airports have longer runways to accommodate larger, heavier aircraft, are often a main hub for air traffic, and can serve as a base for larger airlines. Features can include aircraft maintenance, air traffic control, communications, emergency response, and fuel storage</p>
-      </div>
-    </div>
-  </div>
-</div>
+@include('partials.map-classifications.airfield-modals')
 
 <div class="modal fade" id="level11Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
@@ -937,6 +841,8 @@
     </div>
   </div>
 </div>
+
+
 
 <div class="modal fade" id="level22Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
@@ -1036,41 +942,9 @@
   </div>
 </div>
 
-<div class="modal fade" id="level33Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
-    <div class="modal-content">
-      <div class="modal-header">
-         <div class="d-flex align-items-center">
-            <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-green.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">Level 3 – Health Centre - Rural / Urban Clinic – Urban Centre (HC-UC)</h5>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-            <h6 class="fw-bold"><b>Overview</b></h6>
-            <p class="text-justify">Community Health Centers are the primary-care tier of Marshall Islands’s public system. The Community Health Centers Act of 2025 (10 GCA Chapter 3, Article 8, as amended by P.L. 38-097 on 11 February 2026) makes the Marshall Islands Community Health Centers (GCHC) “a public corporation and autonomous instrumentality.” GCHC is administered by a Board of Directors and a Chief Executive Officer, and must follow US Health Resources &amp; Services Administration (HRSA) Health Center Program requirements (10 GCA Section 3803). The law names two regional centers (10 GCA Section 3808): the Northern Regional Community Health Center (NRCHC) in Dededo and the Southern Regional Community Health Center (SRCHC) in Inalåhan. The Board may establish more centers (10 GCA Sections 3805(g) and 3808(c)).</p>
-            <p class="text-justify"><strong>Note:</strong> The Community Health Centers are moving out of the Department of Public Health and Social Services (DPHSS). Section 3815 sets a three-year transition period starting on enactment (11 February 2026), extendable one year at a time for up to three more years. During this period GCHC works toward “full administrative and operational independence,” after which all program staff, property and federal grant responsibilities transfer from DPHSS to GCHC. Until the transition is complete, sources may describe the centers as either DPHSS facilities or GCHC facilities; both refer to the same tier. The law also refers to a DPHSS Central Public Health Facility (10 GCA Section 3108), which delivers public-health programs rather than general primary care. Record it as “Public — public health facility (DPHSS)” and do not count it as a Community Health Center.</p>
-            <h6 class="fw-bold"><b>Role</b></h6>
-            <ul>
-                <li>Provide “basic quality health care to the people of Marshall Islands” (10 GCA Section 3801) as the entry point to the public system, with each regional center tasked to provide “quality comprehensive primary health care services to all the residents of Marshall Islands” (10 GCA Section 3808)</li>
-                <li>Fill gaps where private clinics are “saturated,” not meeting demand, or unavailable in primary care, pediatric care, prenatal care, infectious disease care and urgent care (10 GCA Section 3805(g))</li>
-                <li>Provide primary and urgent care where such services are unavailable in the community, including through contracts with GMHA or other providers (10 GCA Section 3810); refer patients needing hospital care to GMH or another hospital.</li>
-            </ul>
-            <h6 class="fw-bold"><b>Clinical Service</b></h6>
-            <p><strong>Typical Bed Capacity</strong></p>
-            <ul>
-                <li>No inpatient beds; the Community Health Centers are outpatient facilities. The law sets no bed or staffing standard for them.</li>
-            </ul>
-            <p><strong>Diagnostic &amp; Support Infrastructure</strong></p>
-            <ul>
-                <li>Outpatient medical, pharmacy and primary-care services. The law authorizes a Chief Pharmacist for the Northern and Southern Community Health Centers (10 GCA Section 3108) and requires a Medical Director, preferably a board-certified or board-eligible primary care physician (10 GCA Section 3804(c))</li>
-                <li>Sliding fees: the law says fees “shall not be [a] deterrent to receiving health care” (10 GCA Section 3807)</li>
-            </ul>
-            <p class="text-justify"><em><strong>Note:</strong> Legal basis: 10 GCA Chapter 3, Article 1 (Section 3108) and Article 8 (Sections 3801–3818), as amended by P.L. 38-097 (11 February 2026). This law is very recent, so confirm the status of the transition before relying on it.</em></p>
-      </div>
-    </div>
-  </div>
-</div>
+
+
+@include('partials.map-classifications.medical-modals')
 
 <div class="modal fade" id="level44Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
@@ -1171,47 +1045,7 @@
   </div>
 </div>
 
-<div class="modal fade" id="level55Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="d-flex align-items-center">
-            <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-blue.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">Hospital</h5>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-            <h6 class="fw-bold"><b>Overview</b></h6>
-            <p class="text-justify">The Marshall Islands Memorial Hospital (GMH) is Marshall Islands’s only public hospital and the top of the civilian public system. It is run by the Marshall Islands Memorial Hospital Authority (GMHA), which the law makes “a public corporation and an autonomous instrumentality” of the government of Marshall Islands (10 GCA Section 80102). GMHA is governed by a Board of Trustees (10 GCA Section 80105). By law, GMHA must “[m]aintain and operate a facility providing acute, chronic and all other health care services,” including services it provides by contract for the Marshall Islands Behavioral Health and Wellness Center (10 GCA Section 80109(a)). The acute-care hospital is at Oka Point, Tamuning. GMHA also runs a separately located Skilled Nursing Facility in Barrigada Heights.</p>
-            <p class="text-justify"><strong>Note:</strong> Three other facilities sit outside this tier. First, the Marshall Islands Behavioral Health and Wellness Center (GBHWC), formerly the Department of Mental Health and Substance Abuse, is a separate government department. By law it provides “comprehensive inpatient and community-based outpatient mental health, alcohol and drug programs and services” (10 GCA Section 86101); record it as “Public — specialty behavioral health facility,” not as a general hospital. Second, the US Naval Hospital Marshall Islands in Agana Heights is a federal military hospital serving primarily active-duty personnel and other military beneficiaries. It is not governed by the GCA; record it as “Federal (military) hospital” and leave it out of the civilian tiers. Third, GMH’s accreditation should be checked before it is cited. GMH regained Joint Commission accreditation in 2010 and lost it again in July 2018. GMHA currently describes the hospital as CMS certified, and its laboratory is accredited by the College of American Pathologists (CAP). We did not find a current Joint Commission status, so treat any claim of current Joint Commission accreditation as unverified.</p>
-            <h6 class="fw-bold"><b>Role</b></h6>
-            <ul>
-                <li>Serve as Marshall Islands’s only public acute-care hospital and the main civilian referral hospital for the Community Health Centers and private clinics</li>
-                <li>Provide 24-hour emergency care. By law, GMHA must also establish an Urgent Healthcare Center on the hospital premises for non-emergency outpatient care, meeting Joint Commission and CMS primary-care / urgent-care criteria (10 GCA Section 80123)</li>
-                <li>Serve as the hospital of last resort for patients covered by government programs. GMHA’s accounts must separately track receivables from Medicare, Medicaid, the Medically Indigent Program, Worker’s Compensation and other governments, including the Freely Associated States (10 GCA Section 80116)</li>
-                <li>Provide hospitalization, treatment and drugs for medically indigent patients with irreversible renal failure (10 GCA Section 80117).</li>
-            </ul>
-            <h6 class="fw-bold"><b>Clinical Service</b></h6>
-            <p><strong>Core Capability Areas</strong></p>
-            <ul>
-                <li>Acute and chronic inpatient care, emergency care, and the on-site urgent care center mandated by 10 GCA Section 80123</li>
-                <li>Long-term (skilled nursing) care at the off-site Skilled Nursing Facility. Under 10 GCA Section 7103(b), a nursing home run with a hospital needs its own nursing-home license, separate from the hospital’s</li>
-            </ul>
-            <p><strong>Diagnostic &amp; Support Infrastructure</strong></p>
-            <ul>
-                <li>Hospital clinical laboratory (CAP-accredited), with diagnostic and treatment services. The statutory definition of a “hospital” requires at least clinical laboratory services, diagnostic x-ray services, and facilities for surgery, obstetric care or other definitive treatment (10 GCA Section 25101(d))</li>
-                <li>Aging infrastructure. The Marshall Islands Legislature has found that GMH’s buildings are more than 50 years old, “in an overall state of failure,” and endanger its CMS-based accreditation status. It authorized a replacement healthcare campus under the Marshall Islands Twenty-First (21st) Century Healthcare Center Act of 2021 (12 GCA Chapter 83)</li>
-            </ul>
-            <p><strong>Typical Bed Capacity</strong></p>
-            <ul>
-                <li>About 158–161 licensed acute-care beds at Tamuning, plus 40 licensed long-term-care beds at the Barrigada Heights Skilled Nursing Facility. Sources differ slightly on the acute-care figure.</li>
-            </ul>
-            <p class="text-justify"><em><strong>Note:</strong> Legal basis: 10 GCA Sections 25101, 7103, 80102–80123 and 86101; 12 GCA Chapter 83. Bed counts and accreditation history come from Marshall Islandspedia and Wikipedia; CMS certification and CAP accreditation come from the GMHA website (gmha.org). None of these details are stated in the GCA itself.</em></p>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 <div class="modal fade" id="level66Modal" tabindex="-1" aria-labelledby="level66ModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable level66-modal-dialog">
@@ -1366,6 +1200,8 @@
   </div>
 </div>
 
+
+
 <div class="modal fade" id="police1Modal" tabindex="-1" aria-labelledby="police1ModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
     <div class="modal-content">
@@ -1402,111 +1238,9 @@
   </div>
 </div>
 
-<div class="modal fade" id="police2Modal" tabindex="-1" aria-labelledby="police2ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="d-flex align-items-center gap-2">
-          <img src="{{ asset('images/Layer3.png') }}" alt="Provincial Police Command" style="width:24px; height:24px; object-fit:contain;">
-          <h5 class="modal-title" id="police2ModalLabel">Provincial Police Command (PPC)</h5>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
 
-      <div class="modal-body">
-        <p><strong>Command Level:</strong> Second-tier Territorial Police Command</p>
-        <p><strong>Typical Head Rank:</strong> Chief Superintendent of Police (CSP) or Superintendent of Police (SP)</p>
-        <p><strong>Administrative Equivalent:</strong> Provincial (or Metropolitan Command in the National Capital District and Lae) level</p>
 
-        <p>Commands all policing activities within a province or metropolitan area by directing district police commands, managing crime prevention and law enforcement operations, coordinating emergency responses, and implementing national policing policies at the provincial level.</p>
-
-        <p class="mb-2"><strong>Responsibilities:</strong></p>
-        <ul>
-          <li>Command all policing operations within a province.</li>
-          <li>Supervise District Police Commanders and Station Commanders.</li>
-          <li>Coordinate crime prevention, patrol, and public order operations.</li>
-          <li>Direct provincial criminal investigations and emergency responses.</li>
-          <li>Manage police personnel, logistics, and operational resources within the province.</li>
-          <li>Coordinate policing activities with provincial administrations and local authorities.</li>
-          <li>Monitor crime patterns and public safety issues.</li>
-          <li>Ensure compliance with national policing standards and operational procedures.</li>
-          <li>Prepare operational reports for the Divisional Police Commander.</li>
-          <li>Promote community policing and public engagement initiatives.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="police3Modal" tabindex="-1" aria-labelledby="police3ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="d-flex align-items-center gap-2">
-          <img src="{{ asset('images/Layer2.png') }}" alt="Divisional Command" style="width:24px; height:24px; object-fit:contain;">
-          <h5 class="modal-title" id="police3ModalLabel">Police Precint</h5>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <div class="modal-body">
-        <p><strong>Command level:</strong> Lowest-level territorial command</p>
-        <p><strong>Typical Head Rank:</strong> Police Lieutenant</p>
-        <p><strong>Administrative Equivalent:</strong> Police Precinct/local police command</p>
-        <p><strong>Role:</strong> Precinct Commands are the local territorial policing unit responsible for delivering frontline police services within designated geographic jurisdictions.</p>
-        <p><strong>Function:</strong> Precinct Commands manage patrol officers and shifts, coordinate first-response policing, and maintain day-to-day public safety and police presence within the Precinct area.</p>
-        <p class="mb-2"><strong>Responsibilities:</strong></p>
-        <ul>
-          <li>Direct daily patrol operations within the Precinct jurisdiction.</li>
-          <li>Supervise patrol officers, shifts, and other assigned frontline personnel.</li>
-          <li>Allocate personnel and patrol resources according to local operational requirements.</li>
-          <li>Manage responses to emergency and non-emergency calls for service.</li>
-          <li>Monitor crime, disorder, traffic, and public-safety conditions within the Precinct.</li>
-          <li>Coordinate preliminary responses to incidents requiring specialized GPD services.</li>
-          <li>Maintain liaison with residents, businesses, community organizations, and local authorities.</li>
-          <li>Review incident, arrest, and other operational reports submitted by patrol personnel.</li>
-          <li>Implement GPD policies and operational directives at the Precinct level.</li>
-          <li>Report Precinct activities, incidents, personnel matters, and operational requirements through the Neighborhood Patrol District command.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="police4Modal" tabindex="-1" aria-labelledby="police4ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="d-flex align-items-center gap-2">
-          <img src="{{ asset('images/Layer1.png') }}" alt="National Police HQ" style="width:24px; height:24px; object-fit:contain;">
-          <h5 class="modal-title" id="police4ModalLabel">National Police HQ</h5>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <div class="modal-body">
-        <p><strong>Command level:</strong> Highest-level territorial command</p>
-        <p><strong>Typical Head Rank:</strong> Police Major</p>
-        <p><strong>Administrative Equivalent:</strong> Territorial policing bureau</p>
-        <p><strong>Role:</strong> The Patrol Operations Bureau is the principal departmental command responsible for organizing and overseeing GPD’s geographically based patrol operations throughout Marshall Islands.</p>
-        <p>The Patrol Operations Bureau directs territorial patrol services, coordinates the neighborhood patrol districts and precinct commands, and ensures consistent delivery of frontline police services across the island.</p>
-        <p class="mb-2"><strong>Responsibilities:</strong></p>
-        <ul>
-          <li>Direct territorial patrol operations throughout Marshall Islands.</li>
-          <li>Supervise the activities of the neighborhood patrol districts and precinct commands.</li>
-          <li>Establish patrol priorities and operational requirements for territorial policing.</li>
-          <li>Coordinate deployment of patrol personnel and resources according to operational needs.</li>
-          <li>Monitor emergency response and frontline police service delivery.</li>
-          <li>Manage major incidents requiring resources from multiple Precincts or districts.</li>
-          <li>Ensure implementation of department-wide policing policies at the territorial level.</li>
-          <li>Review operational reports, crime patterns, and patrol performance from subordinate commands.</li>
-          <li>Oversee territorial operations with specialized GPD bureaus and divisions.</li>
-          <li>Report territorial policing activities and operational requirements to the Police Commander.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+@include('partials.map-classifications.police-modals')
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -2521,6 +2255,9 @@ document.addEventListener('change', function(e) {
         });
     }
 
+    @include('partials.map-classifications.facility-level-script')
+    @include('partials.map-classifications.police-category-script')
+
     // --- Apply Filters ---
     async function applyFiltersWithMapControl(
         facilities = [],
@@ -2547,21 +2284,30 @@ document.addEventListener('change', function(e) {
         const showHospital = facilities.includes('hospital');
         const showAirport = facilities.includes('airport');
         const showPolice = facilities.includes('police');
+        const policeFilter = document.getElementById('policeFilter');
+        if (policeFilter) policeFilter.style.display = showPolice ? 'block' : 'none';
+        const policeCategories = [...document.querySelectorAll('#policeFilter input:checked')].map(input => input.value);
         const showEmbassy = facilities.includes('embassy');
+
+        const hospitalFilter = document.getElementById('hospitalFilter');
+        if (hospitalFilter) hospitalFilter.style.display = showHospital ? 'block' : 'none';
 
         // === HOSPITALS ===
         if (showHospital) {
-             const result = await fetchData('/api/hospital', {
+            const result = await fetchData('/api/hospital', {
                 ...common,
-                name: hospitalName,
-                category: hospitalLevels
+                name: hospitalName
             });
 
-            addMarkers(result.hospitals, hospitalMarkers, null);
+            const hospitals = result.hospitals || [];
+            const filteredHospitals = filterFacilitiesByLevel(hospitals, hospitalLevels);
+            addMarkers(filteredHospitals, hospitalMarkers, null);
+            updateFacilityLevelCounts(hospitals);
 
-            totalHospitals = result.hospitals.length;
+            totalHospitals = filteredHospitals.length;
         } else {
             clearMarkers(hospitalMarkers);
+            updateFacilityLevelCounts([]);
         }
 
         // === AIRPORTS ===
@@ -2608,35 +2354,17 @@ document.addEventListener('change', function(e) {
         }
 
         // === POLICE ===
-       if (showPolice) {
+        if (showPolice) {
+            const result = await fetchData('/api/polices', common);
+            const polices = result.polices || [];
+            const filteredPolices = filterPoliceByCategory(polices, policeCategories);
 
-            const result = await fetchData('/api/polices', {
-                ...common
-            });
-
-            const police = result.polices || [];
-            const categoryCounts = result.categoryCounts || {};
-
-            addMarkers(
-                police,
-                policeMarkers,
-                null
-            );
-
-            totalPolice = police.length;
-
-            Object.keys(categoryCounts).forEach(cat => {
-
-                const id = cat.replace(/[^a-zA-Z0-9]/g, '-');
-
-                const el = document.getElementById(`count-${id}`);
-
-                if (el) {
-                    el.textContent = categoryCounts[cat];
-                }
-            });
+            addMarkers(filteredPolices, policeMarkers, null);
+            updatePoliceCategoryCounts(polices);
+            totalPolice = filteredPolices.length;
         } else {
             clearMarkers(policeMarkers);
+            updatePoliceCategoryCounts([]);
         }
 
         // === EMBASSY ===
@@ -2736,6 +2464,14 @@ document.addEventListener('change', function(e) {
                         <div class="facility-item"><input class="form-check-input facility-checkbox" type="checkbox" value="police" id="facilityPolice"><label class="form-check-label" for="facilityPolice"><span class="facility-name">Police</span><span class="facility-count" id="policeCount">0</span></label></div>
                         <div class="facility-item"><input class="form-check-input facility-checkbox" type="checkbox" value="embassy" id="facilityEmbassy"><label class="form-check-label" for="facilityEmbassy"><span class="facility-name">Embassies</span><span class="facility-count" id="embassyCount">0</span></label></div>
                         <div class="facility-item"><input class="form-check-input" type="checkbox" value="all" id="facilityAll"><label class="form-check-label" for="facilityAll"><span class="facility-name is-all">All / Clear All</span></label></div>
+                    </div>
+
+                    <div id="hospitalFilter" style="display:none;">
+                        @include('partials.map-classifications.facility-level-fields')
+                    </div>
+
+                    <div id="policeFilter" style="display:none;">
+                        @include('partials.map-classifications.police-category-fields')
                     </div>
 
                     <hr>
@@ -2928,6 +2664,8 @@ document.addEventListener('click', async (e) => {
         const hf = document.getElementById('hospitalFilter');
         if (af) af.style.display = 'none';
         if (hf) hf.style.display = 'none';
+        const pf = document.getElementById('policeFilter');
+        if (pf) pf.style.display = 'none';
 
         // 2) Reset Select2 (jika ada)
         if (typeof $ !== 'undefined' && $.fn && $.fn.select2) {
